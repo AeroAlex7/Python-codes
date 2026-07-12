@@ -1,0 +1,36 @@
+import math
+g=9.8
+#Calculations
+def tof(u,b):
+    T=(2*u*math.sin(b))/g
+    print("Time of Flight is:",T)
+def mh(u,b):
+    H=((u**2)*(math.sin(b))**2)/(2*g)
+    print("Maximum Height is:",H)
+def hr(u,b):
+    R=((u**2)*math.sin(2*b))/g
+    print("Horizontal Range is:",R)
+    
+#Main
+while True:
+    u=float(input("Enter the initial velocity:"))
+    x=float(input("Enter the launch angle:"))
+    b=math.radians(x)
+    print('='*25)
+    print("1.Time of Flight \n2.Maximum Height \n3.Horizontal Range")
+    print('='*25)
+    opt=int(input("Enter your choice:"))
+        
+    if opt==1:
+        tof(u,b)
+    elif opt==2:
+        mh(u,b)
+    elif opt==3:
+        hr(u,b)
+    else:
+        print("Entered an invalid option")
+    ch=input("Do you want to continue?(y/n):")
+    if ch=='y':
+        continue
+    else:
+        break
