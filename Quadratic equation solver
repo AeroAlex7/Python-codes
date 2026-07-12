@@ -1,0 +1,32 @@
+import cmath
+ch='y'    
+while ch.lower()=='y':
+    print("The quadratic equation is to be in the format ax^2+bx+c")
+    a=eval(input("Enter coefficient a: "))
+    b=eval(input("Enter coefficient b: "))
+    c=eval(input("Enter coefficient c: "))
+    disc=(b**2)-(4*a*c)
+    print("Discriminant shows that:")
+    def solve():    
+        print("Calculating the roots...")
+        r1=(-b+cmath.sqrt(disc)/(2*a))
+        r2=(-b-cmath.sqrt(disc)/(2*a))
+        print("The roots of the given quadratic equation are: ")
+        return r1,r2
+
+    if disc==0:
+        print("The equation has two equal real roots")
+        s1,s2=solve()
+        print(s1.real)
+        print(s2.real)
+    elif disc>0:
+        print("The equation has two disticnt real roots")
+        s1,s2=solve()
+        print(s1.real)
+        print(s2.real)
+    else:
+        print("The equation has no real roots")
+        s1,s2=solve()
+        print(s1)
+        print(s2)
+    ch=input('Do you want to try again?(y/n): ')
