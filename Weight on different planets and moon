@@ -1,0 +1,21 @@
+gravity={1:3.7, 2:8.8, 3:9.8, 4:3.7, 5:24.7, 6:10.4, 7:8.6, 8:11.1, 9:1.6}
+body={1:"Mercury", 2:"Venus", 3:"Earth", 4:"Mars", 5:"Jupiter", 6:"Saturn", 7:"Uranus", 8:"Neptune", 9:"Moon"}
+opt='y'
+while opt.lower()=='y':
+    m=float(input("Enter your mass (in kg): "))
+    print("1. Mercury \n2. Venus \n3. Earth \n4. Mars \n5. Jupiter \n6. Saturn \n7. Uranus \n8. Neptune \n9. Moon")
+    ch=int(input("Enter your choice(1-9): "))
+    if ch not in body:
+        print("Enter a valid option")
+        opt=input("Do you want to try again?(y/n): ")
+        continue
+    g=gravity[ch]
+    F=m*g
+    e=m*9.8
+    print("Mass: ",m,"kg")
+    print("Weight on Earth: ", e ,"N")
+    print("Gravity on", body[ch],": ",g,"m/s^2")
+    print("Weight on", body[ch],": ",F,"N")
+    print("Difference in Weight: ",F-e,"N")
+            
+    opt=input("Do you want to try again?(y/n): ")
